@@ -37,7 +37,7 @@ export default class Webgl {
   }
 
   sizeCanvas() {
-    this.canvas.height = window.innerHeight / 2;
-    this.canvas.width = window.innerWidth / 2;
+    this.canvas.style.height = window.innerHeight / 2;
+    this.canvas.style.width = window.innerWidth / 2;
   }
 }
