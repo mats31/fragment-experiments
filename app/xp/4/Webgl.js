@@ -14,6 +14,7 @@ export default class Webgl {
       'Get absolute value',
       'Use fract part of sin value',
       'Use ceil and floor',
+      'Impulse',
     ];
     this.params = {
       tests: 'Add time',
@@ -68,6 +69,10 @@ export default class Webgl {
               this.fragment = glslify( './shaders/shape-7.frag' );
               this.sandbox.load( this.fragment );
             }
+            if ( i === 8 ) {
+              this.fragment = glslify( './shaders/shape-8.frag' );
+              this.sandbox.load( this.fragment );
+            }
 
             this.setCode();
           }
@@ -99,7 +104,7 @@ export default class Webgl {
   }
 
   sizeCanvas() {
-    this.canvas.height = window.innerHeight / 2;
-    this.canvas.width = window.innerWidth / 2;
+    this.canvas.style.height = window.innerHeight / 2;
+    this.canvas.style.width = window.innerWidth / 2;
   }
 }
