@@ -16,7 +16,7 @@ export default class Webgl {
       'Use ceil and floor',
     ];
     this.params = {
-      tests: 'add time',
+      tests: 'Add time',
     };
 
     this.canvas = document.getElementById( 'glslCanvas' );
