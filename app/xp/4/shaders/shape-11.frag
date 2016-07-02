@@ -7,11 +7,9 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-
-float impulse( float k, float x ) {
-    float h = k * x;
-
-    return h * exp( 1.0 - h );
+float expStep( float x, float k, float n )
+{
+    return exp( -k * pow( x, n ) );
 }
 
 float plot(vec2 st, float pct) {
@@ -20,8 +18,8 @@ float plot(vec2 st, float pct) {
 
 void main() {
   vec2 st = gl_FragCoord.xy/u_resolution;
-
-  float y = impulse( 24.0, st.x ); // Change first parameter in order to modify the curve.
+  
+  float y = expStep( st.x, 10., 5.1 );
 
   vec3 color = vec3(y);
 

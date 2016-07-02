@@ -7,11 +7,9 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-
-float impulse( float k, float x ) {
-    float h = k * x;
-
-    return h * exp( 1.0 - h );
+float pcurve( float x, float a, float b ) {
+    float k = pow( a + b, a + b ) / ( pow( a, a ) * pow( b, b ) );
+    return k * pow( x, a ) * pow( 1.0 - x, b );
 }
 
 float plot(vec2 st, float pct) {
@@ -21,12 +19,12 @@ float plot(vec2 st, float pct) {
 void main() {
   vec2 st = gl_FragCoord.xy/u_resolution;
 
-  float y = impulse( 24.0, st.x ); // Change first parameter in order to modify the curve.
+  float y = pcurve( st.x, 0.1, 2.5 );
 
   vec3 color = vec3(y);
 
   float pct = plot(st,y);
-  color = (1.0-pct)*color+pct*vec3(0.0,1.0,0.0);
+  color = ( 1.0 - pct ) * color + pct * vec3( 0.0, 1.0, 0.0 );
 
   gl_FragColor = vec4(color,1.0);
 }

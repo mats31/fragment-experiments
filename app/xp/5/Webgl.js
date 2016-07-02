@@ -5,7 +5,7 @@ export default class Webgl {
   constructor() {
     this.canvas = document.getElementById( 'glslCanvas' );
     this.sandbox = new GlslCanvas( this.canvas );
-    this.fragment = glslify( './shaders/helloworld.frag' );
+    this.fragment = glslify( './shaders/hopeMix.frag' );
 
     this.sizeCanvas();
     this.load();

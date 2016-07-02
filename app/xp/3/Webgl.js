@@ -1,6 +1,5 @@
 import GlslCanvas from 'GlslCanvas';
-import 'whatwg-fetch';
-const glslify = require('glslify');
+const glslify = require( 'glslify' );
 
 export default class Webgl {
   constructor() {

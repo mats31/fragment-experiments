@@ -8,10 +8,15 @@ uniform vec2 u_resolution;
 uniform float u_time;
 
 
-float impulse( float k, float x ) {
-    float h = k * x;
 
-    return h * exp( 1.0 - h );
+float almostIdentity( float x, float m, float n ) {
+    if( x > m ) return x;
+
+    float a = 2.0 * n - m;
+    float b = 2.0 * m - 3.0 * n;
+    float t = x / m;
+
+    return ( a * t + b ) * t * t + n;
 }
 
 float plot(vec2 st, float pct) {
@@ -21,7 +26,7 @@ float plot(vec2 st, float pct) {
 void main() {
   vec2 st = gl_FragCoord.xy/u_resolution;
 
-  float y = impulse( 24.0, st.x ); // Change first parameter in order to modify the curve.
+  float y = almostIdentity( st.x, 0.1, 0.5 );
 
   vec3 color = vec3(y);
 
