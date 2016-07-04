@@ -5,16 +5,16 @@ const glslify = require( 'glslify' );
 export default class Webgl {
   constructor() {
     this.tests = [
-      'Static',
-      'Animate',
+      'Rotation',
+      'Brightness',
     ];
     this.params = {
-      tests: 'Animate',
+      tests: 'Brightness',
     };
 
     this.canvas = document.getElementById( 'glslCanvas' );
     this.sandbox = new GlslCanvas( this.canvas );
-    this.fragment = glslify( './shaders/sunset-0.frag' );
+    this.fragment = glslify( './shaders/hsb-0.frag' );
 
     this.initGui();
     this.sizeCanvas();
@@ -26,11 +26,11 @@ export default class Webgl {
     for ( let i = 0; i < this.tests.length; i++ ) {
       if ( this.tests[i] === nextProject ) {
         if ( i === 0 ) {
-          this.fragment = glslify( './shaders/sunset-0.frag' );
+          this.fragment = glslify( './shaders/hsb-0.frag' );
           this.sandbox.load( this.fragment );
         }
         if ( i === 1 ) {
-          this.fragment = glslify( './shaders/sunset-1.frag' );
+          this.fragment = glslify( './shaders/hsb-1.frag' );
           this.sandbox.load( this.fragment );
         }
 

@@ -7,13 +7,8 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-vec3 colorA = vec3( 0.149, 0.141, 0.912 );
-vec3 colorB = vec3( 1.000, 0.833, 0.224 );
-
-float pcurve( float x, float a, float b ) {
-  float k = pow( a + b, a + b ) / ( pow( a, a ) * pow( b, b ) );
-  return k * pow( x, a ) * pow( 1.0 - x, b );
-}
+vec3 colorA = vec3( 0., 0., 0. );
+vec3 colorB = vec3( 1., 1., 1. );
 
 float plot (vec2 st, float pct){
   return  smoothstep( pct-0.01, pct, st.y) -
@@ -22,13 +17,13 @@ float plot (vec2 st, float pct){
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec3 color = vec3(0.0);
+    vec3 color = vec3( 0.0 );
 
     vec3 pct = vec3(st.x);
 
-    pct.r = smoothstep( -0.1, 0.6, st.x );
-    pct.g = pcurve( st.x, 1.3, 0.7 );
-    pct.b = pow( st.x, 0.1 );
+    pct.r = step( 0.333, st.x );
+    pct.g = step( 0.333, st.x ) * abs( ( step( 0.666, st.x ) - 1. ) );
+    pct.b = abs( step( 0.666, st.x ) - 1. );
 
     color = mix(colorA, colorB, pct);
 

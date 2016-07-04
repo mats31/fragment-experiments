@@ -5,6 +5,9 @@ import Webgl2 from './xp/3/Webgl';
 import Webgl3 from './xp/4/Webgl';
 import Webgl4 from './xp/5/Webgl';
 import Webgl5 from './xp/6/Webgl';
+import Webgl6 from './xp/7/Webgl';
+import Webgl7 from './xp/8/Webgl';
+import Webgl8 from './xp/9/Webgl';
 /* ---------------------------- */
 
 import dat from 'dat-gui';
@@ -17,8 +20,21 @@ const projects = {
   Webgl3,
   Webgl4,
   Webgl5,
+  Webgl6,
+  Webgl7,
+  Webgl8,
 };
-const projectNames = ['Hello World', 'Uniforms', 'gl_FragCoord', 'Shapes functions', 'Hope mix', 'Sunset'];
+const projectNames = [
+  'Hello World',
+  'Uniforms',
+  'gl_FragCoord',
+  'Shapes functions',
+  'Hope mix',
+  'Sunset',
+  'Rainbow',
+  'Flag',
+  'Polar coordinates',
+];
 
 // Current project
 let webgl;
