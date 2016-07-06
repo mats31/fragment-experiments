@@ -8,6 +8,7 @@ import Webgl5 from './xp/6/Webgl';
 import Webgl6 from './xp/7/Webgl';
 import Webgl7 from './xp/8/Webgl';
 import Webgl8 from './xp/9/Webgl';
+import Webgl9 from './xp/10/Webgl';
 /* ---------------------------- */
 
 import dat from 'dat-gui';
@@ -23,6 +24,7 @@ const projects = {
   Webgl6,
   Webgl7,
   Webgl8,
+  Webgl9,
 };
 const projectNames = [
   'Hello World',
@@ -34,6 +36,7 @@ const projectNames = [
   'Rainbow',
   'Flag',
   'Polar coordinates',
+  'Rectangle',
 ];
 
 // Current project
