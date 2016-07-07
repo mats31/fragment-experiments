@@ -5,17 +5,15 @@ const glslify = require( 'glslify' );
 export default class Webgl {
   constructor() {
     this.tests = [
-      'Custom size',
-      'Smoothstep',
-      'Color',
+      'Animation',
     ];
     this.params = {
-      tests: 'Color',
+      tests: 'Animation',
     };
 
     this.canvas = document.getElementById( 'glslCanvas' );
     this.sandbox = new GlslCanvas( this.canvas );
-    this.fragment = glslify( './shaders/rectangle-2.frag' );
+    this.fragment = glslify( './shaders/polar-0.frag' );
 
     this.initGui();
     this.sizeCanvas();
@@ -27,15 +25,7 @@ export default class Webgl {
     for ( let i = 0; i < this.tests.length; i++ ) {
       if ( this.tests[i] === nextProject ) {
         if ( i === 0 ) {
-          this.fragment = glslify( './shaders/rectangle-0.frag' );
-          this.sandbox.load( this.fragment );
-        }
-        if ( i === 1 ) {
-          this.fragment = glslify( './shaders/rectangle-1.frag' );
-          this.sandbox.load( this.fragment );
-        }
-        if ( i === 2 ) {
-          this.fragment = glslify( './shaders/rectangle-2.frag' );
+          this.fragment = glslify( './shaders/polar-0.frag' );
           this.sandbox.load( this.fragment );
         }
 

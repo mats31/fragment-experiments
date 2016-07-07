@@ -9,6 +9,12 @@ import Webgl6 from './xp/7/Webgl';
 import Webgl7 from './xp/8/Webgl';
 import Webgl8 from './xp/9/Webgl';
 import Webgl9 from './xp/10/Webgl';
+import Webgl10 from './xp/11/Webgl';
+import Webgl11 from './xp/12/Webgl';
+import Webgl12 from './xp/13/Webgl';
+import Webgl13 from './xp/14/Webgl';
+import Webgl14 from './xp/15/Webgl';
+import Webgl15 from './xp/16/Webgl';
 /* ---------------------------- */
 
 import dat from 'dat-gui';
@@ -25,6 +31,12 @@ const projects = {
   Webgl7,
   Webgl8,
   Webgl9,
+  Webgl10,
+  Webgl11,
+  Webgl12,
+  Webgl13,
+  Webgl14,
+  Webgl15,
 };
 const projectNames = [
   'Hello World',
@@ -37,6 +49,12 @@ const projectNames = [
   'Flag',
   'Polar coordinates',
   'Rectangle',
+  'Circles',
+  'Polar forms',
+  'Combinatorial',
+  'Translation',
+  'Rotation',
+  'Scale',
 ];
 
 // Current project

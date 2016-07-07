@@ -5,17 +5,22 @@ const glslify = require( 'glslify' );
 export default class Webgl {
   constructor() {
     this.tests = [
-      'Custom size',
+      'Gradient',
+      'Step',
+      'Inverse',
       'Smoothstep',
-      'Color',
+      'Color function',
+      'Heart',
+      'Move',
+      'Combination',
     ];
     this.params = {
-      tests: 'Color',
+      tests: 'Combination',
     };
 
     this.canvas = document.getElementById( 'glslCanvas' );
     this.sandbox = new GlslCanvas( this.canvas );
-    this.fragment = glslify( './shaders/rectangle-2.frag' );
+    this.fragment = glslify( './shaders/circle-7.frag' );
 
     this.initGui();
     this.sizeCanvas();
@@ -27,15 +32,35 @@ export default class Webgl {
     for ( let i = 0; i < this.tests.length; i++ ) {
       if ( this.tests[i] === nextProject ) {
         if ( i === 0 ) {
-          this.fragment = glslify( './shaders/rectangle-0.frag' );
+          this.fragment = glslify( './shaders/circle-0.frag' );
           this.sandbox.load( this.fragment );
         }
         if ( i === 1 ) {
-          this.fragment = glslify( './shaders/rectangle-1.frag' );
+          this.fragment = glslify( './shaders/circle-1.frag' );
           this.sandbox.load( this.fragment );
         }
         if ( i === 2 ) {
-          this.fragment = glslify( './shaders/rectangle-2.frag' );
+          this.fragment = glslify( './shaders/circle-2.frag' );
+          this.sandbox.load( this.fragment );
+        }
+        if ( i === 3 ) {
+          this.fragment = glslify( './shaders/circle-3.frag' );
+          this.sandbox.load( this.fragment );
+        }
+        if ( i === 4 ) {
+          this.fragment = glslify( './shaders/circle-4.frag' );
+          this.sandbox.load( this.fragment );
+        }
+        if ( i === 5 ) {
+          this.fragment = glslify( './shaders/circle-5.frag' );
+          this.sandbox.load( this.fragment );
+        }
+        if ( i === 6 ) {
+          this.fragment = glslify( './shaders/circle-6.frag' );
+          this.sandbox.load( this.fragment );
+        }
+        if ( i === 7 ) {
+          this.fragment = glslify( './shaders/circle-7.frag' );
           this.sandbox.load( this.fragment );
         }
 
